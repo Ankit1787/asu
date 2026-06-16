@@ -1,0 +1,56 @@
+{
+  "name": "asu",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.2.0",
+    "@fortawesome/free-brands-svg-icons": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/vue-fontawesome": "^3.2.0",
+    "@rds-vue-ui/card-degree-search": "^0.2.1",
+    "@rds-vue-ui/card-image-article": "^0.1.13",
+    "@rds-vue-ui/card-info-vertical": "^0.3.7",
+    "@rds-vue-ui/collapse-item": "^0.4.1",
+    "@rds-vue-ui/footer-standard": "^0.4.1",
+    "@rds-vue-ui/header-standard": "^0.3.5",
+    "@rds-vue-ui/hero-standard-apollo": "^0.3.1",
+    "@rds-vue-ui/rds-accordion": "^0.1.7",
+    "@rds-vue-ui/rds-dropdown": "^0.2.0",
+    "@rds-vue-ui/rds-theme-base": "^0.7.2",
+    "@vueuse/core": "^14.3.0",
+    "nuxt": "^4.4.8",
+    "vue": "^3.5.35",
+    "vue-router": "^5.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.61.1",
+    "@typescript-eslint/parser": "^8.61.1",
+    "eslint": "^10.5.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.9.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.7",
+    "prettier": "^3.8.4",
+    "sass": "^1.101.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,scss}": [
+      "prettier --write"
+    ]
+  }
+}
