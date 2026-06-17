@@ -945,8 +945,18 @@ const campuses = [
   },
   {
     name: "Tempe campus",
-    img: "https://lh3.googleusercontent.com/aida/AP1WRLu7EO9ZD_ww7MOXyUdQ9bUuCssN4x9mfQxtC66hhXCW954RHTdpn3tzrN9USBhzfxo6UvSuASZmPxS9zI8PRMwiEhcVuol-xPOV-Kfk9NPFvpNMGTq23JGAjOI3ltNNpBbqBu2Next-g2L-Y0x90435fS9c7y8D9m0-U91C2z5QeW_teh9l-VnlES2G6JP3DfOgGakkBt_X2iUbphbEsXD9lMKYd3gk6HRkNOTx6vdGjB_HtFKG985PIA6sI4QYXSFvMn0tgsidnp-zdfZ6M2z3LZPG_L6OBFUTDmKGlopefIH4HU4nnFSYQ7vXV-rAqszMA6bhj1f",
+    img: "https://lh3.googleusercontent.com/aida/AP1WRLtwreSOh4CZl3r8ImnauZurX7-JwZROw1VzyqBJZDTzbI1xO3gmGZnC5UJpbE644kGn1JQddTSRf_ZcA7IGsKbUypfU9MFpRfR6xy8bzFrI7tbEqowY0p-RFdc-yGNhJoUWrQE2La9kuC13lpvFEas4NKAqECnaJuuVGyamXvy8OTt2LmEJBpIlHS5Dk9ZBwY1MoKwYoCBqLNcmG4DbHKynoZXia7a2u8VbHrSQTEH_Y_12STqkzUsvj3-_",
     link: "https://tours.asu.edu/tempe",
+  },
+  {
+    name: "West Valley campus",
+    img: "https://lh3.googleusercontent.com/aida/AP1WRLtAY_kOx0PZtq-NmRW2gNJA2g74YzAU9ba17FJD-radNooLKFXOrEplMYKa2a56KLsa-m5HyHOmxf196sshLWwWwmWfwdTSlje9QYilo9dTwgrS1W37X_Z8lqxeKogTjp5QMgbewPmpw3t7aSeK9swOAyNH8AF6zxm85cSwXpQTSTBUDzx6MrJbC7EX_O5BNl0WtKo6fEWaDcNyh0XPtE5aVglT_5S4EMHnK8RcfMclGmPaWim-8_AReMx1",
+    link: "https://tours.asu.edu/west",
+  },
+  {
+    name: "West Valley campus",
+    img: "https://lh3.googleusercontent.com/aida/AP1WRLtAY_kOx0PZtq-NmRW2gNJA2g74YzAU9ba17FJD-radNooLKFXOrEplMYKa2a56KLsa-m5HyHOmxf196sshLWwWwmWfwdTSlje9QYilo9dTwgrS1W37X_Z8lqxeKogTjp5QMgbewPmpw3t7aSeK9swOAyNH8AF6zxm85cSwXpQTSTBUDzx6MrJbC7EX_O5BNl0WtKo6fEWaDcNyh0XPtE5aVglT_5S4EMHnK8RcfMclGmPaWim-8_AReMx1",
+    link: "https://tours.asu.edu/west",
   },
   {
     name: "West Valley campus",
