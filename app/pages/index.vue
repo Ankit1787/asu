@@ -406,50 +406,7 @@
         >
           <span class="boxed-highlight">Stories of excellence</span>
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-8 md:gap-y-16">
-          <!-- Story 1 -->
-          <StoryCard
-            title="ASU graduate wins $100K in pitch competition"
-            description="Days after graduating from ASU, finance alum Logan Milano won $100,000 for his startup, Amryth, at Arizona's premier collegiate entrepreneurship competition."
-            img="https://lh3.googleusercontent.com/aida/AP1WRLsbsBbFUdjE1HA97j6iPqn3wZ4DzZ6Cubr-OjoZM4DNmWEPShiFtLHcPrJ2a71Dx_WYFI7bXijS3U7wHkkgQWcNXBu2N1-LpqfVAoniofYRTvJraJYE5qOF4HtJklFSUh5acajuIcLYR-EsCk96oww1OIHUYSR5WLHT8AdHTzyjSTuT-1d9qIasNs99INgKy1Y7nUOZakNqrd6Sdqy0RMyhJLsv0YHmgSew3SWzp-QsSsKXNzbAXowJ-Z-V"
-          />
-
-          <!-- Story 2 -->
-          <StoryCard
-            title="Winners of prestigious Flinn Scholarship to join ASU"
-            description="Top Arizona high school grads and winners of the Flinn Scholarship have chosen ASU for its academic excellence, research opportunities and outstanding honors education."
-            img="https://lh3.googleusercontent.com/aida/AP1WRLstnfkIds6e-ewNlgleecfxASzrc9QwsDk6lRn2FeiSYosJnBbuZAHjCa7mMWhLrZGywjCs3L-T8ZLA7uH6X7v7kFoLCFd5OnPeOUace19V03tNBfxMwnKBnCRkae13-02OV-RNxC1qOvGW1Yk5yeatuVFsiIDUyRB7NFR5Kgth1SAECLOmg5k8-1tf46X8Y-TAkWyKUmtKtsFe8zGUYK0FYj-JZ76yCz82eCswEDLMQQGeQkDenyN688cg"
-          />
-
-          <!-- Story 3 -->
-          <StoryCard
-            title="Two ASU professors elected to National Academy of Sciences"
-            description="Amber Wutich and Robert Page were recognized by the renowned institution for their research in water insecurity and behavior of social insects."
-            img="https://lh3.googleusercontent.com/aida/AP1WRLsuUYOxl1kqUiQ6a358Wv2l8fYVDVzfT0fLjvl_YXvwkUak5M63dsIIbZZ9IMuaXoXSgq_T5mdbTDrf8vOixWYUV8GRTMtHcaJYMitY6kajC8ud5lOrcnXg5YUlalXYRh4ZwMjynYXaC2UOHiE3rNb6mMj4YOQRMkpevJiREpU7JPLSmOUyph8V_Dum1pTbb01tPQEBTfmz05ooiDSG8UkZ1_3Eb0RpQxHo_R9HTLTg6vmkUDUWYWuzb46E"
-          />
-
-          <!-- Story 4 -->
-          <StoryCard
-            title="University expands its role in chip research"
-            description="ASU is joining Applied Materials' new EPIC Center, which connects top universities and tech companies to speed up research and strengthen semiconductor manufacturing."
-            img="https://lh3.googleusercontent.com/aida/AP1WRLuivnCDB5JuCjYp-Vz_CZYMavu-6E4LnLmWQSW_jWwSTiOlF0ZGPIO3TlwW8R0cLAK0nzZbMo9WQFbh9CBKrZqDuxSyGUXLN-oE6viyYbSjlL0B6S7D7QpzKYaP5zBlhGq_2RFxRDhfdWX7dgruBdPDTaac5olQeIToA9qa34Iuek2d05y5xOuuxMxozfevddiAmscV6M80wNrnAie8AlVMeoFfRBgTYZnHEA5nVAMWEMyhaJaXRdPx1A4"
-          />
-
-          <!-- Story 5 (Responsive Barrett Highlight) -->
-          <StoryCard
-            title="Barrett, The Honors College is creating bright futures"
-            description="Barrett students go on to attend the best graduate schools, win prestigious international fellowships and accept positions with some of the world's top companies."
-            quote='Barrett is the "gold standard" among the nation&apos;s honors colleges.'
-            quote-source="- The New York Times"
-          />
-
-          <!-- Story 6 -->
-          <StoryCard
-            title="Alliance set to improve health outcomes in Arizona"
-            description="ASU Health's partnership with HonorHealth will provide clinical training and research collaboration for students in the new School of Medicine and Medical Engineering."
-            img="https://lh3.googleusercontent.com/aida/AP1WRLuh0P_kRcfIGPOSANUi4XsLpB_c8y8lyGgkyKSbECLBthjszGLfLZc1Agz-8obpRYb0iYoiK3wqpdohy0sOJe_WNleEZahFYBJQbFVMwqk42wqrFZEWCy_U_zyGRcQ03L3Dbi473Pd_IXiceXKSbnXOZOAJduDsHzZUOO_fNqYI6Vdl8PKOgiUYhNSC04JbhDdpJA6zWp3Fp0znVDrLEPUB95eyOculd50wqKpDoTCTfWHERyneqb0LzTvR"
-          />
-        </div>
+        <StoryCard />
       </div>
     </section>
 
@@ -479,31 +436,10 @@
 
     <!-- Visual Blocks Row (Academics / Innovation / Serving Learners) -->
     <section class="py-10 md:py-section-padding">
-      <div
-        class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-gutter"
-      >
+      <div class="max-w-container-max mx-auto px-gutter md:gap-gutter">
         <!-- Card 3: Serving Learners -->
 
-        <VisualBlockCard
-          title="Experience world-class academics"
-          img="https://lh3.googleusercontent.com/aida/AP1WRLtIuTjZaVqBh_oZtZ3YfhB44y5gchqazSHP5aBIG6vT9YKJiGI3xUrMvea7kL8kMIXFonikbIbKYv7TJWrR30e1C2z5QeW_teh9l-VnlES2G6JP3DfOgGakkBt_X2iUbphbEsXD9lMKYd3gk6HRkNOTx6vdGjB_HtFKG985PIA6sI4QYXSFvMn0tgsidnp-zdfZ6M2z3LZPG_L6OBFUTDmKGlopefIH4HU4nnFSYQ7vXV-rAqszMA6bhj1f"
-          link="https://www.asu.edu/academics"
-          description="As a comprehensive public research university, ASU is committed to providing excellence in education through the Academic Enterprise, empowering every student and expanding access to higher education for all."
-        />
-
-        <VisualBlockCard
-          title="Discovery and innovation that serves the public"
-          img="https://lh3.googleusercontent.com/aida/AP1WRLtA-UfqGT2RiZ4lM-VVK0tGzXWEeJeTfJWM7RO53S4YHS5W9A0M38eJHB59WsMYi9Ef9qpTZWbfvVKSWA4tVU7ZkA1_me7GEA8wQrVqRwP181Rx_T5O0C54lUl2KJRzeXjnX_PfihpMaC39wr9H-4l_cd2Kgo6Exg3YgoOBb4n3TEAvLW-GWZOn13yxkstjDMIpVP6fB7VXLf9wB1LXWpOw_SQQGie2g3OzEQSYm0oNfz6GkkTXg3n4OXMA"
-          link="https://research.asu.edu/"
-          description="ASU is a major public research university focused on solving the world's most pressing challenges. Through the Knowledge Enterprise, ASU researchers seek to create new knowledge, foster innovation and drive economic development."
-        />
-
-        <VisualBlockCard
-          title="Serving learners at every stage of life"
-          img="https://lh3.googleusercontent.com/aida/AP1WRLtAY_kOx0PZtq-NmRW2gNJA2g74YzAU9ba17FJD-radNooLKFXOrEplMYKa2a56KLsa-m5HyHOmxf196sshLWwWwmWfwdTSlje9QYilo9dTwgrS1W37X_Z8lqxeKogTjp5QMgbewPmpw3t7aSeK9swOAyNH8AF6zxm85cSwXpQTSTBUDzx6MrJbC7EX_O5BNl0WtKo6fEWaDcNyh0XPtE5aVglT_5S4EMHnK8RcfMclGmPaWim-8_AReMx1"
-          link="https://asuforyou.asu.edu/"
-          description="ASU is committed to serving all students and communities. Through the Learning Enterprise, ASU is breaking down barriers to education, providing high-quality learning opportunities for students from K-12 to career development."
-        />
+        <VisualBlockCard />
       </div>
     </section>
 

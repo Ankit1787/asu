@@ -1,58 +1,42 @@
 <template>
-  <div
-    class="relative aspect-[16/25] hover:scale-105 transition-transform duration-300 h-[447px] md:h-[600px] md:h-auto overflow-hidden group cursor-pointer shadow-lg"
-  >
-    <img
-      :alt="title"
-      class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
-      :src="img"
+  <div class="grid md:grid-cols-3 gap-8">
+    <CardImageTile
+      v-for="card in cards"
+      :key="card.title"
+      :bg-image-src="card.img"
+      :title="card.title"
+      :text="card.description"
+      :cta-link="card.link"
+      cta-text="Learn more"
+      display-cta-button
+      clickable-card
     />
-    <!-- Default Gradient Overlay (fades out on hover on desktop) -->
-    <div
-      class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent z-10 transition-opacity duration-300 md:group-hover:opacity-0"
-    ></div>
-
-    <!-- Default text (slides down/fades out on hover on desktop) -->
-    <div
-      class="absolute bottom-10 left-6 right-6 md:left-10 md:right-10 z-20 flex flex-col gap-4 transition-all duration-300 md:group-hover:opacity-0 md:group-hover:translate-y-4"
-    >
-      <h3 class="font-headline-lg text-white text-xl md:text-headline-md leading-tight font-black">
-        {{ title }}
-      </h3>
-      <!-- Mobile-only button -->
-      <a
-        :href="link"
-        class="md:hidden bg-asu-gold text-asu-maroon px-6 py-2.5 font-bold text-xs uppercase self-start rounded-full text-center"
-        >Learn more</a
-      >
-    </div>
-
-    <!-- Desktop Hover White Overlay Box -->
-    <div
-      class="hidden md:flex absolute -bottom-10 left-0 right-0 bg-white p-8 m-6 z-30 flex-col gap-4 transform translate-y-[101%] group-hover:-translate-y-12 transition-transform duration-300 shadow-xl border border-neutral-100 rounded-sm"
-    >
-      <h3 class="font-headline-md text-neutral-900 text-[20px] font-bold leading-tight">
-        {{ title }}
-      </h3>
-      <p class="text-neutral-600 text-sm leading-relaxed">
-        {{ description }}
-      </p>
-      <a
-        :href="link"
-        target="_blank"
-        class="bg-asu-gold text-asu-maroon text-center font-bold px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-colors text-sm self-start"
-      >
-        Learn more
-      </a>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  title: string;
-  img: string;
-  link: string;
-  description: string;
-}>();
+import { CardImageTile } from "@rds-vue-ui/card-image-tile";
+const cards = [
+  {
+    title: "Experience world-class academics",
+    img: "https://lh3.googleusercontent.com/aida/AP1WRLtIuTjZaVqBh_oZtZ3YfhB44y5gchqazSHP5aBIG6vT9YKJiGI3xUrMvea7kL8kMIXFonikbIbKYv7TJWrR30e1C2z5QeW_teh9l-VnlES2G6JP3DfOgGakkBt_X2iUbphbEsXD9lMKYd3gk6HRkNOTx6vdGjB_HtFKG985PIA6sI4QYXSFvMn0tgsidnp-zdfZ6M2z3LZPG_L6OBFUTDmKGlopefIH4HU4nnFSYQ7vXV-rAqszMA6bhj1f",
+    link: "https://www.asu.edu/academics",
+    description:
+      "As a comprehensive public research university, ASU is committed to providing excellence in education through the Academic Enterprise, empowering every student and expanding access to higher education for all.",
+  },
+  {
+    title: "Discovery and innovation that serves the public",
+    img: "https://lh3.googleusercontent.com/aida/AP1WRLtA-UfqGT2RiZ4lM-VVK0tGzXWEeJeTfJWM7RO53S4YHS5W9A0M38eJHB59WsMYi9Ef9qpTZWbfvVKSWA4tVU7ZkA1_me7GEA8wQrVqRwP181Rx_T5O0C54lUl2KJRzeXjnX_PfihpMaC39wr9H-4l_cd2Kgo6Exg3YgoOBb4n3TEAvLW-GWZOn13yxkstjDMIpVP6fB7VXLf9wB1LXWpOw_SQQGie2g3OzEQSYm0oNfz6GkkTXg3n4OXMA",
+    link: "https://research.asu.edu/",
+    description:
+      "ASU is a major public research university focused on solving the world's most pressing challenges. Through the Knowledge Enterprise, ASU researchers seek to create new knowledge, foster innovation and drive economic development.",
+  },
+  {
+    title: "Serving learners at every stage of life",
+    img: "https://lh3.googleusercontent.com/aida/AP1WRLtAY_kOx0PZtq-NmRW2gNJA2g74YzAU9ba17FJD-radNooLKFXOrEplMYKa2a56KLsa-m5HyHOmxf196sshLWwWwmWfwdTSlje9QYilo9dTwgrS1W37X_Z8lqxeKogTjp5QMgbewPmpw3t7aSeK9swOAyNH8AF6zxm85cSwXpQTSTBUDzx6MrJbC7EX_O5BNl0WtKo6fEWaDcNyh0XPtE5aVglT_5S4EMHnK8RcfMclGmPaWim-8_AReMx1",
+    link: "https://asuforyou.asu.edu/",
+    description:
+      "ASU is committed to serving all students and communities. Through the Learning Enterprise, ASU is breaking down barriers to education, providing high-quality learning opportunities for students from K-12 to career development.",
+  },
+];
 </script>

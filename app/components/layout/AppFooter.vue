@@ -1,63 +1,95 @@
-<template>
-  <footer>
-    <!-- Top Black Section -->
-    <div class="bg-[#181818]">
-      <div
-        class="max-w-[1200px] mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between"
-      >
-        <!-- Logo -->
-        <img src="/images/ASU-EndorsedLogo.png" alt="ASU Logo" class="h-20 object-contain" />
-
-        <!-- Social -->
-        <div class="flex items-center gap-8 text-white text-2xl mt-6 md:mt-0">
-          <font-awesome-icon class="cursor-pointer" :icon="['fab', 'facebook-f']" />
-          <font-awesome-icon class="cursor-pointer" :icon="['fab', 'instagram']" />
-          <font-awesome-icon class="cursor-pointer" :icon="['fab', 'youtube']" />
-          <font-awesome-icon class="cursor-pointer" :icon="['fab', 'linkedin-in']" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Gold Section -->
-    <div class="bg-[#FFC627]">
-      <div
-        class="max-w-[1200px] mx-auto px-6 py-6 flex flex-col lg:flex-row items-center justify-between gap-6"
-      >
-        <!-- Links -->
-        <div class="flex flex-wrap justify-center lg:justify-start gap-8 font-semibold text-black">
-          <a class="text-asu-black hover:underline" href="#">Maps and Locations</a>
-          <a class="text-asu-black hover:underline" href="#">Jobs</a>
-          <a class="text-asu-black hover:underline" href="#">Directory</a>
-          <a class="text-asu-black hover:underline" href="#">Contact ASU</a>
-          <a class="text-asu-black hover:underline" href="#">My ASU</a>
-        </div>
-
-        <!-- Ranking -->
-        <div class="flex items-center gap-4">
-          <img class="md:max-w-[320px]" src="/images/footer-rank.webp" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Gray Bottom -->
-    <div class="bg-[#E5E5E5]">
-      <div
-        class="max-w-[1200px] mx-auto px-6 py-5 flex flex-col lg:flex-row items-center justify-between gap-4"
-      >
-        <div class="flex flex-wrap gap-8 text-[15px] text-black">
-          <a href="#" class="text-asu-black cursor-pointer hover:underline-black"
-            >Copyright and Trademark</a
-          >
-          <a href="#" class="text-asu-black cursor-pointer hover:underline-black">Accessibility</a>
-          <a href="#" class="text-asu-black cursor-pointer hover:underline-black">Privacy</a>
-          <a href="#" class="text-asu-black cursor-pointer hover:underline-black">Terms of Use</a>
-          <a href="#" class="text-asu-black cursor-pointer hover:underline-black">Emergency</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-</template>
-
 <script setup lang="ts">
-// Custom footer component preserving layout and styling
+import { FooterStandard } from "@rds-vue-ui/footer-standard";
+
+const tertiaryItems = [
+  {
+    text: "Copyright and Trademark",
+    uri: "https://www.asu.edu/about/copyright-trademark",
+    target: "BLNK",
+  },
+  {
+    text: "Accessibility",
+    uri: "https://www.asu.edu/accessibility/",
+    target: "BLNK",
+  },
+  {
+    text: "Privacy",
+    uri: "https://www.asu.edu/privacy/",
+    target: "BLNK",
+  },
+  {
+    text: "Terms of Use",
+    uri: "https://www.asu.edu/tou/",
+    target: "BLNK",
+  },
+  {
+    text: "Emergency",
+    uri: "https://www.asu.edu/emergency/",
+    target: "BLNK",
+  },
+];
+
+const secondaryItems = [
+  {
+    text: "Maps and Locations",
+    uri: "https://www.asu.edu/about/locations-maps",
+  },
+  {
+    text: "Jobs",
+    uri: "https://www.asu.edu/asujobs",
+  },
+  {
+    text: "Directory",
+    uri: "https://isearch.asu.edu/",
+  },
+  {
+    text: "Contact ASU",
+    uri: "https://www.asu.edu/about/contact",
+  },
+  {
+    text: "My ASU",
+    uri: "https://my.asu.edu/",
+  },
+];
 </script>
+
+<template>
+  <FooterStandard
+    :tertiary-items="tertiaryItems"
+    innovation-image-src="/images/footer-rank.webp"
+    innovation-image-alt="Repeatedly ranked #1 on 30+ lists in the last 3 years"
+  >
+    <!-- BLACK SECTION -->
+    <template #primary-section>
+      <div
+        class="bg-[#181818] text-white max-w-[1200px] mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center"
+      >
+        <img src="/images/ASU-EndorsedLogo.png" alt="ASU Logo" class="h-20" />
+
+        <div class="flex gap-8 text-2xl mt-6 md:mt-0">
+          <font-awesome-icon :icon="['fab', 'facebook-f']" />
+          <font-awesome-icon :icon="['fab', 'instagram']" />
+          <font-awesome-icon :icon="['fab', 'youtube']" />
+          <font-awesome-icon :icon="['fab', 'linkedin-in']" />
+        </div>
+      </div>
+    </template>
+
+    <!-- GOLD SECTION -->
+    <template #secondary-menu>
+      <div class="bg-[#FFC627] flex flex-wrap items-center justify-between px-8 py-6">
+        <nav class="flex flex-wrap gap-8 font-bold">
+          <a
+            v-for="item in secondaryItems"
+            :key="item.text"
+            :href="item.uri"
+            target="_blank"
+            class="text-black hover:underline"
+          >
+            {{ item.text }}
+          </a>
+        </nav>
+      </div>
+    </template>
+  </FooterStandard>
+</template>
