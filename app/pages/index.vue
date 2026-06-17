@@ -2,141 +2,7 @@
   <div
     class="responsive-view bg-surface font-body-md text-on-surface antialiased overflow-x-hidden min-h-screen"
   >
-    <div class="">
-      <!-- Utility Top Bar (Desktop Only) -->
-      <nav class="bg-surface-container-low hidden lg:block border-b border-outline-variant">
-        <div
-          class="max-w-container-max mx-auto px-gutter h-10 flex justify-end items-center gap-6 font-label-lg text-label-lg text-on-surface-variant"
-        >
-          <a
-            class="hover:text-asu-maroon transition-colors text-gray-600 text-sm"
-            href="https://www.asu.edu/"
-            >ASU Home</a
-          >
-          <a
-            class="hover:text-asu-maroon transition-colors text-gray-600 text-sm"
-            href="https://my.asu.edu/"
-            >My ASU</a
-          >
-          <a
-            class="hover:text-asu-maroon transition-colors text-gray-600 text-sm"
-            href="https://www.asu.edu/colleges"
-            >Colleges and Schools</a
-          >
-          <a
-            class="hover:text-asu-maroon transition-colors text-gray-600 text-sm"
-            href="https://my.asu.edu/"
-            >Sign In</a
-          >
-          <div
-            class="flex items-center gap-1 cursor-pointer hover:text-asu-maroon text-gray-600 text-sm"
-          >
-            <span>Search</span>
-            <font-awesome-icon icon="search" class="text-[13px]" />
-          </div>
-        </div>
-      </nav>
-
-      <!-- Main Header -->
-      <header
-        :class="isScrolled ? 'fixed top-0 ' : 'sticky top-0'"
-        class="bg-white shadow-sm w-full z-50"
-      >
-        <div
-          :class="isScrolled ? 'h-[93px]' : 'h-[113px]'"
-          class="max-w-container-max mx-auto px-gutter h-[113px] flex justify-between items-center"
-        >
-          <!-- Logo and Desktop Navigation Links -->
-          <div class="flex h-full gap-6">
-            <!-- ASU Logo: fork icon + wordmark text -->
-            <NuxtLink to="/" class="flex-shrink-0 flex items-center gap-3">
-              <img
-                alt="ASU Logo"
-                class="transition-scrolled"
-                :class="!isScrolled ? 'h-[72px] w-[93px]' : 'h-[60px] w-[83px]'"
-                src="/images/arizona-state-university-logo-vertical.webp"
-              />
-            </NuxtLink>
-            <div class="flex flex-col justify-between pt-3">
-              <span
-                :class="isScrolled ? 'text-[2rem]' : 'text-[2.5rem]'"
-                class="transition-scrolled hidden sm:block text-[2.5rem] font-bold text-gray-900 leading-tight"
-                >Arizona State University</span
-              >
-              <!-- Desktop Navigation -->
-              <nav class="hidden xl:flex items-center font-medium text-[15px] text-gray-900 h-12">
-                <!-- Home Icon with gold underline -->
-                <NuxtLink
-                  to="/"
-                  class="flex items-center justify-center h-full px-3 border-b-8 border-yellow-400 text-gray-900 transition-colors"
-                  aria-label="Home"
-                >
-                  <font-awesome-icon icon="home" class="text-[18px]" />
-                </NuxtLink>
-
-                <a
-                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
-                  href="https://news.asu.edu/"
-                  >News and Events</a
-                >
-                <a
-                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
-                  href="https://www.asu.edu/academics"
-                  >Academics</a
-                >
-                <a
-                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
-                  href="https://admission.asu.edu/"
-                  >Admission</a
-                >
-                <a
-                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
-                  href="https://research.asu.edu/"
-                  >Research</a
-                >
-                <a
-                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
-                  href="https://thesundevils.com/"
-                  >Athletics</a
-                >
-                <a
-                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
-                  href="https://alumni.asu.edu/"
-                  >Alumni</a
-                >
-                <a
-                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
-                  href="https://giving.asu.edu/"
-                  >Giving</a
-                >
-                <a
-                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
-                  href="https://www.asu.edu/president"
-                  >President</a
-                >
-                <a
-                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
-                  href="https://www.asu.edu/about"
-                  >About ASU</a
-                >
-              </nav>
-            </div>
-          </div>
-
-          <!-- Mobile Hamburger Trigger -->
-          <div class="flex xl:hidden items-center gap-4">
-            <button
-              class="text-asu-maroon text-2xl p-1"
-              aria-label="Open Mobile Menu"
-              @click="mobileMenuOpen = true"
-            >
-              <font-awesome-icon icon="bars" />
-            </button>
-          </div>
-        </div>
-      </header>
-    </div>
-    <div v-if="isScrolled" class="h-[93px]" />
+    <AppHeader />
 
     <!-- Unified Hero Section (Responsive Video/Image Hero) -->
     <section
@@ -542,200 +408,47 @@
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-y-12 md:gap-x-8 md:gap-y-16">
           <!-- Story 1 -->
-          <article class="relative group cursor-pointer flex flex-col">
-            <div class="overflow-hidden shadow-sm">
-              <img
-                alt="ASU Graduate Wins Competition"
-                class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida/AP1WRLsbsBbFUdjE1HA97j6iPqn3wZ4DzZ6Cubr-OjoZM4DNmWEPShiFtLHcPrJ2a71Dx_WYFI7bXijS3U7wHkkgQWcNXBu2N1-LpqfVAoniofYRTvJraJYE5qOF4HtJklFSUh5acajuIcLYR-EsCk96oww1OIHUYSR5WLHT8AdHTzyjSTuT-1d9qIasNs99INgKy1Y7nUOZakNqrd6Sdqy0RMyhJLsv0YHmgSew3SWzp-QsSsKXNzbAXowJ-Z-V"
-              />
-            </div>
-            <div
-              class="bg-white p-6 mx-4 -mt-10 relative z-10 shadow-sm flex-1 flex flex-col justify-between transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-lg"
-            >
-              <div>
-                <h3
-                  class="font-headline-sm text-base md:text-headline-sm mb-2 group-hover:text-asu-maroon text-neutral-900 font-bold transition-colors"
-                >
-                  ASU graduate wins $100K in pitch competition
-                </h3>
-                <p class="text-on-surface-variant line-clamp-3 text-sm md:text-base">
-                  Days after graduating from ASU, finance alum Logan Milano won $100,000 for his
-                  startup, Amryth, at Arizona's premier collegiate entrepreneurship competition.
-                </p>
-              </div>
-              <button
-                class="md:hidden mt-4 bg-asu-gold text-asu-maroon px-6 py-2 font-bold text-xs uppercase self-start"
-              >
-                Read more
-              </button>
-            </div>
-          </article>
+          <StoryCard
+            title="ASU graduate wins $100K in pitch competition"
+            description="Days after graduating from ASU, finance alum Logan Milano won $100,000 for his startup, Amryth, at Arizona's premier collegiate entrepreneurship competition."
+            img="https://lh3.googleusercontent.com/aida/AP1WRLsbsBbFUdjE1HA97j6iPqn3wZ4DzZ6Cubr-OjoZM4DNmWEPShiFtLHcPrJ2a71Dx_WYFI7bXijS3U7wHkkgQWcNXBu2N1-LpqfVAoniofYRTvJraJYE5qOF4HtJklFSUh5acajuIcLYR-EsCk96oww1OIHUYSR5WLHT8AdHTzyjSTuT-1d9qIasNs99INgKy1Y7nUOZakNqrd6Sdqy0RMyhJLsv0YHmgSew3SWzp-QsSsKXNzbAXowJ-Z-V"
+          />
 
           <!-- Story 2 -->
-          <article class="relative group cursor-pointer flex flex-col">
-            <div class="overflow-hidden shadow-sm">
-              <img
-                alt="Flinn Scholarship Winners"
-                class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida/AP1WRLstnfkIds6e-ewNlgleecfxASzrc9QwsDk6lRn2FeiSYosJnBbuZAHjCa7mMWhLrZGywjCs3L-T8ZLA7uH6X7v7kFoLCFd5OnPeOUace19V03tNBfxMwnKBnCRkae13-02OV-RNxC1qOvGW1Yk5yeatuVFsiIDUyRB7NFR5Kgth1SAECLOmg5k8-1tf46X8Y-TAkWyKUmtKtsFe8zGUYK0FYj-JZ76yCz82eCswEDLMQQGeQkDenyN688cg"
-              />
-            </div>
-            <div
-              class="bg-white p-6 mx-4 -mt-10 relative z-10 shadow-sm flex-1 flex flex-col justify-between transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-lg"
-            >
-              <div>
-                <h3
-                  class="font-headline-sm text-base md:text-headline-sm mb-2 group-hover:text-asu-maroon text-neutral-800 font-bold transition-colors"
-                >
-                  Winners of prestigious Flinn Scholarship to join ASU
-                </h3>
-                <p class="text-on-surface-variant line-clamp-3 text-sm md:text-base">
-                  Top Arizona high school grads and winners of the Flinn Scholarship have chosen ASU
-                  for its academic excellence, research opportunities and outstanding honors
-                  education.
-                </p>
-              </div>
-              <button
-                class="md:hidden mt-4 bg-asu-gold text-asu-maroon px-6 py-2 font-bold text-xs uppercase self-start"
-              >
-                Read more
-              </button>
-            </div>
-          </article>
+          <StoryCard
+            title="Winners of prestigious Flinn Scholarship to join ASU"
+            description="Top Arizona high school grads and winners of the Flinn Scholarship have chosen ASU for its academic excellence, research opportunities and outstanding honors education."
+            img="https://lh3.googleusercontent.com/aida/AP1WRLstnfkIds6e-ewNlgleecfxASzrc9QwsDk6lRn2FeiSYosJnBbuZAHjCa7mMWhLrZGywjCs3L-T8ZLA7uH6X7v7kFoLCFd5OnPeOUace19V03tNBfxMwnKBnCRkae13-02OV-RNxC1qOvGW1Yk5yeatuVFsiIDUyRB7NFR5Kgth1SAECLOmg5k8-1tf46X8Y-TAkWyKUmtKtsFe8zGUYK0FYj-JZ76yCz82eCswEDLMQQGeQkDenyN688cg"
+          />
 
           <!-- Story 3 -->
-          <article class="relative group cursor-pointer flex flex-col">
-            <div class="overflow-hidden shadow-sm">
-              <img
-                alt="National Academy of Sciences"
-                class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida/AP1WRLsuUYOxl1kqUiQ6a358Wv2l8fYVDVzfT0fLjvl_YXvwkUak5M63dsIIbZZ9IMuaXoXSgq_T5mdbTDrf8vOixWYUV8GRTMtHcaJYMitY6kajC8ud5lOrcnXg5YUlalXYRh4ZwMjynYXaC2UOHiE3rNb6mMj4YOQRMkpevJiREpU7JPLSmOUyph8V_Dum1pTbb01tPQEBTfmz05ooiDSG8UkZ1_3Eb0RpQxHo_R9HTLTg6vmkUDUWYWuzb46E"
-              />
-            </div>
-            <div
-              class="bg-white p-6 mx-4 -mt-10 relative z-10 shadow-sm flex-1 flex flex-col justify-between transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-lg"
-            >
-              <div>
-                <h3
-                  class="font-headline-sm text-base md:text-headline-sm mb-2 group-hover:text-asu-maroon text-neutral-800 font-bold transition-colors"
-                >
-                  Two ASU professors elected to National Academy of Sciences
-                </h3>
-                <p class="text-on-surface-variant line-clamp-3 text-sm md:text-base">
-                  Amber Wutich and Robert Page were recognized by the renowned institution for their
-                  research in water insecurity and behavior of social insects.
-                </p>
-              </div>
-              <button
-                class="md:hidden mt-4 bg-asu-gold text-asu-maroon px-6 py-2 font-bold text-xs uppercase self-start"
-              >
-                Read more
-              </button>
-            </div>
-          </article>
+          <StoryCard
+            title="Two ASU professors elected to National Academy of Sciences"
+            description="Amber Wutich and Robert Page were recognized by the renowned institution for their research in water insecurity and behavior of social insects."
+            img="https://lh3.googleusercontent.com/aida/AP1WRLsuUYOxl1kqUiQ6a358Wv2l8fYVDVzfT0fLjvl_YXvwkUak5M63dsIIbZZ9IMuaXoXSgq_T5mdbTDrf8vOixWYUV8GRTMtHcaJYMitY6kajC8ud5lOrcnXg5YUlalXYRh4ZwMjynYXaC2UOHiE3rNb6mMj4YOQRMkpevJiREpU7JPLSmOUyph8V_Dum1pTbb01tPQEBTfmz05ooiDSG8UkZ1_3Eb0RpQxHo_R9HTLTg6vmkUDUWYWuzb46E"
+          />
 
           <!-- Story 4 -->
-          <article class="relative group cursor-pointer flex flex-col">
-            <div class="overflow-hidden shadow-sm">
-              <img
-                alt="Chip Research"
-                class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida/AP1WRLuivnCDB5JuCjYp-Vz_CZYMavu-6E4LnLmWQSW_jWwSTiOlF0ZGPIO3TlwW8R0cLAK0nzZbMo9WQFbh9CBKrZqDuxSyGUXLN-oE6viyYbSjlL0B6S7D7QpzKYaP5zBlhGq_2RFxRDhfdWX7dgruBdPDTaac5olQeIToA9qa34Iuek2d05y5xOuuxMxozfevddiAmscV6M80wNrnAie8AlVMeoFfRBgTYZnHEA5nVAMWEMyhaJaXRdPx1A4"
-              />
-            </div>
-            <div
-              class="bg-white p-6 mx-4 -mt-10 relative z-10 shadow-sm flex-1 flex flex-col justify-between transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-lg"
-            >
-              <div>
-                <h3
-                  class="font-headline-sm text-base md:text-headline-sm mb-2 group-hover:text-asu-maroon text-neutral-800 font-bold transition-colors"
-                >
-                  University expands its role in chip research
-                </h3>
-                <p class="text-on-surface-variant line-clamp-3 text-sm md:text-base">
-                  ASU is joining Applied Materials' new EPIC Center, which connects top universities
-                  and tech companies to speed up research and strengthen semiconductor
-                  manufacturing.
-                </p>
-              </div>
-              <button
-                class="md:hidden mt-4 bg-asu-gold text-asu-maroon px-6 py-2 font-bold text-xs uppercase self-start"
-              >
-                Read more
-              </button>
-            </div>
-          </article>
+          <StoryCard
+            title="University expands its role in chip research"
+            description="ASU is joining Applied Materials' new EPIC Center, which connects top universities and tech companies to speed up research and strengthen semiconductor manufacturing."
+            img="https://lh3.googleusercontent.com/aida/AP1WRLuivnCDB5JuCjYp-Vz_CZYMavu-6E4LnLmWQSW_jWwSTiOlF0ZGPIO3TlwW8R0cLAK0nzZbMo9WQFbh9CBKrZqDuxSyGUXLN-oE6viyYbSjlL0B6S7D7QpzKYaP5zBlhGq_2RFxRDhfdWX7dgruBdPDTaac5olQeIToA9qa34Iuek2d05y5xOuuxMxozfevddiAmscV6M80wNrnAie8AlVMeoFfRBgTYZnHEA5nVAMWEMyhaJaXRdPx1A4"
+          />
 
           <!-- Story 5 (Responsive Barrett Highlight) -->
-          <article class="relative group cursor-pointer flex flex-col">
-            <!-- Gold Quote Box Header -->
-            <div
-              class="bg-asu-gold aspect-video flex flex-col justify-center p-6 md:p-8 relative overflow-hidden text-asu-maroon shadow-sm"
-            >
-              <p class="font-headline-sm text-base md:text-lg lg:text-xl font-black leading-snug">
-                Barrett is the "gold standard" among the nation's honors colleges.
-              </p>
-              <span
-                class="inline-block bg-black text-white text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 mt-2 self-start"
-                >- The New York Times</span
-              >
-            </div>
-            <!-- Card Body -->
-            <div
-              class="bg-white p-6 mx-4 -mt-10 relative z-10 shadow-sm flex-1 flex flex-col justify-between transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-lg"
-            >
-              <div>
-                <h3
-                  class="font-headline-sm text-base md:text-headline-sm mb-2 group-hover:text-asu-maroon text-neutral-800 font-bold transition-colors"
-                >
-                  Barrett, The Honors College is creating bright futures
-                </h3>
-                <p class="text-on-surface-variant line-clamp-3 text-sm md:text-base">
-                  Barrett students go on to attend the best graduate schools, win prestigious
-                  international fellowships and accept positions with some of the world's top
-                  companies.
-                </p>
-              </div>
-              <button
-                class="md:hidden mt-4 bg-asu-gold text-asu-maroon px-6 py-2 font-bold text-xs uppercase self-start"
-              >
-                Read more
-              </button>
-            </div>
-          </article>
+          <StoryCard
+            title="Barrett, The Honors College is creating bright futures"
+            description="Barrett students go on to attend the best graduate schools, win prestigious international fellowships and accept positions with some of the world's top companies."
+            quote='Barrett is the "gold standard" among the nation&apos;s honors colleges.'
+            quote-source="- The New York Times"
+          />
 
           <!-- Story 6 -->
-          <article class="relative group cursor-pointer flex flex-col">
-            <div class="overflow-hidden shadow-sm">
-              <img
-                alt="HonorHealth Alliance"
-                class="w-full aspect-video object-cover transition-transform duration-500 group-hover:scale-105"
-                src="https://lh3.googleusercontent.com/aida/AP1WRLuh0P_kRcfIGPOSANUi4XsLpB_c8y8lyGgkyKSbECLBthjszGLfLZc1Agz-8obpRYb0iYoiK3wqpdohy0sOJe_WNleEZahFYBJQbFVMwqk42wqrFZEWCy_U_zyGRcQ03L3Dbi473Pd_IXiceXKSbnXOZOAJduDsHzZUOO_fNqYI6Vdl8PKOgiUYhNSC04JbhDdpJA6zWp3Fp0znVDrLEPUB95eyOculd50wqKpDoTCTfWHERyneqb0LzTvR"
-              />
-            </div>
-            <div
-              class="bg-white p-6 mx-4 -mt-10 relative z-10 shadow-sm flex-1 flex flex-col justify-between transition-all duration-300 group-hover:-translate-y-3 group-hover:shadow-lg"
-            >
-              <div>
-                <h3
-                  class="font-headline-sm text-base md:text-headline-sm mb-2 group-hover:text-asu-maroon text-neutral-800 font-bold transition-colors"
-                >
-                  Alliance set to improve health outcomes in Arizona
-                </h3>
-                <p class="text-on-surface-variant line-clamp-3 text-sm md:text-base">
-                  ASU Health's partnership with HonorHealth will provide clinical training and
-                  research collaboration for students in the new School of Medicine and Medical
-                  Engineering.
-                </p>
-              </div>
-              <button
-                class="md:hidden mt-4 bg-asu-gold text-asu-maroon px-6 py-2 font-bold text-xs uppercase self-start"
-              >
-                Read more
-              </button>
-            </div>
-          </article>
+          <StoryCard
+            title="Alliance set to improve health outcomes in Arizona"
+            description="ASU Health's partnership with HonorHealth will provide clinical training and research collaboration for students in the new School of Medicine and Medical Engineering."
+            img="https://lh3.googleusercontent.com/aida/AP1WRLuh0P_kRcfIGPOSANUi4XsLpB_c8y8lyGgkyKSbECLBthjszGLfLZc1Agz-8obpRYb0iYoiK3wqpdohy0sOJe_WNleEZahFYBJQbFVMwqk42wqrFZEWCy_U_zyGRcQ03L3Dbi473Pd_IXiceXKSbnXOZOAJduDsHzZUOO_fNqYI6Vdl8PKOgiUYhNSC04JbhDdpJA6zWp3Fp0znVDrLEPUB95eyOculd50wqKpDoTCTfWHERyneqb0LzTvR"
+          />
         </div>
       </div>
     </section>
@@ -769,168 +482,31 @@
       <div
         class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-gutter"
       >
-        <!-- Card 1: Academics -->
-        <div
-          class="relative aspect-[16/25] hover:scale-105 transition-transform duration-300 md:aspect-[16/25] h-[600px] md:h-auto overflow-hidden group cursor-pointer shadow-lg"
-        >
-          <img
-            alt="Experience world-class academics"
-            class="absolute inset-0 w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida/AP1WRLtIuTjZaVqBh_oZtZ3YfhB44y5gchqazSHP5aBIG6vT9YKJiGI3xUrMvea7kL8kMIXFonikbIbKYv7TJWrR30e1C2z5QeW_teh9l-VnlES2G6JP3DfOgGakkBt_X2iUbphbEsXD9lMKYd3gk6HRkNOTx6vdGjB_HtFKG985PIA6sI4QYXSFvMn0tgsidnp-zdfZ6M2z3LZPG_L6OBFUTDmKGlopefIH4HU4nnFSYQ7vXV-rAqszMA6bhj1f"
-          />
-          <!-- Default Gradient Overlay (fades out on hover on desktop) -->
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent z-10 transition-opacity duration-300 md:group-hover:opacity-0"
-          ></div>
-
-          <!-- Default text (slides down/fades out on hover on desktop) -->
-          <div
-            class="absolute bottom-10 left-6 right-6 md:left-10 md:right-10 z-20 flex flex-col gap-4 transition-all duration-300 md:group-hover:opacity-0 md:group-hover:translate-y-4"
-          >
-            <h3
-              class="font-headline-lg text-white text-xl md:text-headline-md leading-tight font-black"
-            >
-              Experience world-class academics
-            </h3>
-            <!-- Mobile-only button -->
-            <a
-              href="https://www.asu.edu/academics"
-              class="md:hidden bg-asu-gold text-asu-maroon px-6 py-2.5 font-bold text-xs uppercase self-start rounded-full text-center"
-              >Learn more</a
-            >
-          </div>
-
-          <!-- Desktop Hover White Overlay Box -->
-          <div
-            class="hidden md:flex absolute -bottom-10 left-0 right-0 bg-white p-8 m-6 z-30 flex-col gap-4 transform translate-y-[101%] group-hover:-translate-y-12 transition-transform duration-300 shadow-xl border border-neutral-100 rounded-sm"
-          >
-            <h3 class="font-headline-md text-neutral-900 text-[20px] font-bold leading-tight">
-              Experience world-class academics
-            </h3>
-            <p class="text-neutral-600 text-sm leading-relaxed">
-              As a comprehensive public research university, ASU is committed to providing
-              excellence in education through the Academic Enterprise, empowering every student and
-              expanding access to higher education for all.
-            </p>
-            <a
-              href="https://www.asu.edu/academics"
-              target="_blank"
-              class="bg-asu-gold text-asu-maroon text-center font-bold px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-colors text-sm self-start"
-            >
-              Learn more
-            </a>
-          </div>
-        </div>
-
-        <!-- Card 2: Innovation -->
-        <div
-          class="relative aspect-[16/25] hover:scale-105 transition-transform duration-300 md:aspect-[16/25] h-[600px] md:h-auto overflow-hidden group cursor-pointer shadow-lg"
-        >
-          <img
-            alt="Innovation that serves the public"
-            class="absolute inset-0 w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida/AP1WRLtA-UfqGT2RiZ4lM-VVK0tGzXWEeJeTfJWM7RO53S4YHS5W9A0M38eJHB59WsMYi9Ef9qpTZWbfvVKSWA4tVU7ZkA1_me7GEA8wQrVqRwP181Rx_T5O0C54lUl2KJRzeXjnX_PfihpMaC39wr9H-4l_cd2Kgo6Exg3YgoOBb4n3TEAvLW-GWZOn13yxkstjDMIpVP6fB7VXLf9wB1LXWpOw_SQQGie2g3OzEQSYm0oNfz6GkkTXg3n4OXMA"
-          />
-          <!-- Default Gradient Overlay (fades out on hover on desktop) -->
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent z-10 transition-opacity duration-300 md:group-hover:opacity-0"
-          ></div>
-
-          <!-- Default text (slides down/fades out on hover on desktop) -->
-          <div
-            class="absolute bottom-10 left-6 right-6 md:left-10 md:right-10 z-20 flex flex-col gap-4 transition-all duration-300 md:group-hover:opacity-0 md:group-hover:translate-y-4"
-          >
-            <h3
-              class="font-headline-lg text-white text-xl md:text-headline-md leading-tight font-black"
-            >
-              Discovery and innovation that serves the public
-            </h3>
-            <!-- Mobile-only button -->
-            <a
-              href="https://research.asu.edu/"
-              class="md:hidden bg-asu-gold text-asu-maroon px-6 py-2.5 font-bold text-xs uppercase self-start rounded-full text-center"
-              >Learn more</a
-            >
-          </div>
-
-          <!-- Desktop Hover White Overlay Box -->
-          <div
-            class="hidden md:flex absolute -bottom-10 left-0 right-0 bg-white p-8 m-6 z-30 flex-col gap-4 transform translate-y-[101%] group-hover:-translate-y-12 transition-transform duration-300 shadow-xl border border-neutral-100 rounded-sm"
-          >
-            <h3 class="font-headline-md text-neutral-900 text-[20px] font-bold leading-tight">
-              Discovery and innovation that serves the public
-            </h3>
-            <p class="text-neutral-600 text-sm leading-relaxed">
-              ASU is a leading research university, focused on finding solutions to society's
-              greatest challenges. Our researchers work across disciplines to translate discovery
-              into public value and real-world impact.
-            </p>
-            <a
-              href="https://research.asu.edu/"
-              target="_blank"
-              class="bg-asu-gold text-asu-maroon text-center font-bold px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-colors text-sm self-start"
-            >
-              Learn more
-            </a>
-          </div>
-        </div>
-
         <!-- Card 3: Serving Learners -->
-        <div
-          class="relative aspect-[16/25] hover:scale-105 transition-transform duration-300 md:aspect-[16/25] h-[600px] md:h-auto overflow-hidden group cursor-pointer shadow-lg"
-        >
-          <img
-            alt="Serving all learners"
-            class="absolute inset-0 w-full h-full object-cover"
-            src="https://lh3.googleusercontent.com/aida/AP1WRLuqxpYUPHskiCqiSSkj5su8dKfjkghenC0UtTku8DVQeGajv86_VeTIbnLxZKCWs73qtaHKkjvCtjLuKNMS6Ic2EO1IkCou5BTftoaMjVL1qGrRlp7RRLlEwTrP_T035WDC3GhG1QHIbZL3gFDb_GUsG-ZmgnrjL5AHDipPRImH33dnyxcrHS0f2KOqDtfyIisCl4_I-wdkgBk8b_VSfVxhhM1JuZGkfcPR6XZvR1p9aCRq9Uz44Xpwp6TK"
-          />
-          <!-- Default Gradient Overlay (fades out on hover on desktop) -->
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent z-10 transition-opacity duration-300 md:group-hover:opacity-0"
-          ></div>
 
-          <!-- Default text (slides down/fades out on hover on desktop) -->
-          <div
-            class="absolute bottom-10 left-6 right-6 md:left-10 md:right-10 z-20 flex flex-col gap-4 transition-all duration-300 md:group-hover:opacity-0 md:group-hover:translate-y-4"
-          >
-            <h3
-              class="font-headline-lg text-white text-xl md:text-headline-md leading-tight font-black"
-            >
-              Serving all learners at every stage of life
-            </h3>
-            <!-- Mobile-only button -->
-            <a
-              href="https://asuforyou.asu.edu/"
-              class="md:hidden bg-asu-gold text-asu-maroon px-6 py-2.5 font-bold text-xs uppercase self-start rounded-full text-center"
-              >Learn more</a
-            >
-          </div>
+        <VisualBlockCard
+          title="Experience world-class academics"
+          img="https://lh3.googleusercontent.com/aida/AP1WRLtIuTjZaVqBh_oZtZ3YfhB44y5gchqazSHP5aBIG6vT9YKJiGI3xUrMvea7kL8kMIXFonikbIbKYv7TJWrR30e1C2z5QeW_teh9l-VnlES2G6JP3DfOgGakkBt_X2iUbphbEsXD9lMKYd3gk6HRkNOTx6vdGjB_HtFKG985PIA6sI4QYXSFvMn0tgsidnp-zdfZ6M2z3LZPG_L6OBFUTDmKGlopefIH4HU4nnFSYQ7vXV-rAqszMA6bhj1f"
+          link="https://www.asu.edu/academics"
+          description="As a comprehensive public research university, ASU is committed to providing excellence in education through the Academic Enterprise, empowering every student and expanding access to higher education for all."
+        />
 
-          <!-- Desktop Hover White Overlay Box -->
-          <div
-            class="hidden md:flex absolute -bottom-10 left-0 right-0 bg-white p-8 m-6 z-30 flex-col gap-4 transform translate-y-[101%] group-hover:-translate-y-12 transition-transform duration-300 shadow-xl border border-neutral-100 rounded-sm"
-          >
-            <h3 class="font-headline-md text-neutral-900 text-[20px] font-bold leading-tight">
-              Serving all learners at every stage of life
-            </h3>
-            <p class="text-neutral-600 text-sm leading-relaxed">
-              ASU is committed to providing lifelong education. From K-12 programs to professional
-              development and retirement courses, we ensure high-quality learning is accessible to
-              everyone.
-            </p>
-            <a
-              href="https://asuforyou.asu.edu/"
-              target="_blank"
-              class="bg-asu-gold text-asu-maroon text-center font-bold px-6 py-2.5 rounded-full hover:bg-opacity-90 transition-colors text-sm self-start"
-            >
-              Learn more
-            </a>
-          </div>
-        </div>
+        <VisualBlockCard
+          title="Discovery and innovation that serves the public"
+          img="https://lh3.googleusercontent.com/aida/AP1WRLtA-UfqGT2RiZ4lM-VVK0tGzXWEeJeTfJWM7RO53S4YHS5W9A0M38eJHB59WsMYi9Ef9qpTZWbfvVKSWA4tVU7ZkA1_me7GEA8wQrVqRwP181Rx_T5O0C54lUl2KJRzeXjnX_PfihpMaC39wr9H-4l_cd2Kgo6Exg3YgoOBb4n3TEAvLW-GWZOn13yxkstjDMIpVP6fB7VXLf9wB1LXWpOw_SQQGie2g3OzEQSYm0oNfz6GkkTXg3n4OXMA"
+          link="https://research.asu.edu/"
+          description="ASU is a major public research university focused on solving the world's most pressing challenges. Through the Knowledge Enterprise, ASU researchers seek to create new knowledge, foster innovation and drive economic development."
+        />
+
+        <VisualBlockCard
+          title="Serving learners at every stage of life"
+          img="https://lh3.googleusercontent.com/aida/AP1WRLtAY_kOx0PZtq-NmRW2gNJA2g74YzAU9ba17FJD-radNooLKFXOrEplMYKa2a56KLsa-m5HyHOmxf196sshLWwWwmWfwdTSlje9QYilo9dTwgrS1W37X_Z8lqxeKogTjp5QMgbewPmpw3t7aSeK9swOAyNH8AF6zxm85cSwXpQTSTBUDzx6MrJbC7EX_O5BNl0WtKo6fEWaDcNyh0XPtE5aVglT_5S4EMHnK8RcfMclGmPaWim-8_AReMx1"
+          link="https://asuforyou.asu.edu/"
+          description="ASU is committed to serving all students and communities. Through the Learning Enterprise, ASU is breaking down barriers to education, providing high-quality learning opportunities for students from K-12 to career development."
+        />
       </div>
     </section>
 
-    <!-- Carve Your Path -->
     <section class="relative py-20 md:py-[160px] flex items-center justify-start overflow-hidden">
       <!-- Parallax Background Image -->
       <div
@@ -964,19 +540,19 @@
             <a
               href="https://visit.asu.edu/"
               target="_blank"
-              class="bg-asu-maroon text-white font-label-lg px-8 py-3 hover:bg-opacity-95 transition-colors rounded-[400rem] font-bold text-sm md:text-base"
+              class="bg-asu-maroon text-center text-white font-label-lg px-8 py-3 hover:bg-opacity-95 transition-colors rounded-[400rem] font-bold text-sm md:text-base"
               >Visit ASU</a
             >
             <a
               href="https://admission.asu.edu/requestinfo"
               target="_blank"
-              class="bg-asu-maroon text-white font-label-lg px-8 py-3 hover:bg-opacity-95 transition-colors rounded-[400rem] font-bold text-sm md:text-base"
+              class="bg-asu-maroon text-center text-white font-label-lg px-8 py-3 hover:bg-opacity-95 transition-colors rounded-[400rem] font-bold text-sm md:text-base"
               >Request information</a
             >
             <a
               href="https://admission.asu.edu/apply"
               target="_blank"
-              class="bg-asu-gold text-asu-maroon font-label-lg px-8 py-3 hover:bg-opacity-95 transition-colors rounded-[400rem] font-bold text-sm md:text-base animate-pulse-custom"
+              class="bg-asu-gold text-center text-asu-maroon font-label-lg px-8 py-3 hover:bg-opacity-95 transition-colors rounded-[400rem] font-bold text-sm md:text-base animate-pulse-custom"
               >Apply now</a
             >
           </div>
@@ -985,7 +561,9 @@
     </section>
 
     <!-- One University, Many Places (Responsive Carousel) -->
-    <section class="py-10 relative topographic-bg md:py-section-padding overflow-hidden bg-white">
+    <section
+      class="py-10 relative topographic-bg md:py-section-padding overflow-hidden bg-white carousel-container text-neutral-900"
+    >
       <div
         class="max-w-container-max mx-auto px-gutter mb-stack-lg flex justify-between items-center"
       >
@@ -994,51 +572,68 @@
         >
           <span class="boxed-highlight">One university, many places</span>
         </h2>
-        <!-- Scroll navigation -->
-        <!-- <div class=" flex gap-2"> -->
-
-        <!-- </div> -->
       </div>
       <!-- Carousel Slider container -->
-      <div class="w-full relative">
+      <div class="w-full relative py-4">
         <div
-          ref="campusCarousel"
-          class="flex relative gap-gutter px-gutter transform-slider-desktop overflow-x-auto no-scrollbar scroll-smooth pb-10"
+          class="carousel-track"
+          :style="trackStyle"
+          @touchstart="handleTouchStart"
+          @touchend="handleTouchEnd"
         >
           <div
             v-for="(campus, idx) in campuses"
             :key="idx"
-            class="min-w-[85%] sm:min-w-[75%] md:min-w-[700px] 2xl:min-w-[1120px] relative group overflow-hidden flex-shrink-0 shadow-md"
+            class="carousel-slide relative group overflow-hidden shadow-md rounded-sm cursor-pointer"
+            @click="activeIndex = idx"
           >
-            <img :alt="campus.name" class="w-full aspect-[16/9] object-cover" :src="campus.img" />
+            <img
+              :alt="campus.name"
+              class="w-full aspect-[16/9] object-cover pointer-events-none select-none"
+              :src="campus.img"
+            />
             <div
-              class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6 md:p-10"
+              class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6 md:p-10 transition-opacity duration-500"
+              :class="
+                idx === activeIndex
+                  ? 'opacity-100 pointer-events-auto'
+                  : 'opacity-0 pointer-events-none'
+              "
             >
               <h3
-                class="font-headline-lg text-lg md:text-headline-md mb-2 md:mb-4 font-bold font-image-display"
+                class="bg-white text-neutral-900 font-bold px-4 py-1 text-2xl md:text-3xl lg:text-4xl inline-block w-fit mb-4 font-headline-md"
               >
                 {{ campus.name }}
               </h3>
               <a
                 :href="campus.link"
                 target="_blank"
-                class="bg-asu-gold rounded-[400rem] text-black font-label-lg font-bold px-6 py-2 self-start hover:bg-white transition-colors text-xs md:text-sm"
+                class="bg-asu-gold rounded-[400rem] text-black font-label-lg font-bold px-6 py-2 self-start hover:bg-white transition-colors text-xs md:text-sm shadow-md"
                 >Virtual tour</a
               >
             </div>
           </div>
         </div>
+        <!-- Navigation arrows -->
         <button
-          class="w-10 h-10 absolute left-[10%] top-1/2 -translate-y-1/2 rounded-full border border-asu-maroon flex items-center justify-center hover:bg-asu-maroon/10 text-asu-maroon transition-colors"
-          aria-label="Scroll left"
-          @click="scrollCampus('left')"
+          class="w-10 h-10 absolute top-1/2 -translate-y-1/2 rounded-full bg-white text-neutral-900 shadow-lg flex items-center justify-center hover:bg-neutral-100 transition-all z-20 carousel-btn-left"
+          :class="
+            activeIndex === 0 ? 'opacity-30 cursor-not-allowed pointer-events-none' : 'opacity-100'
+          "
+          aria-label="Previous slide"
+          @click="prevSlide"
         >
           <font-awesome-icon icon="chevron-left" />
         </button>
         <button
-          class="w-10 h-10 absolute right-[10%] top-1/2 -translate-y-1/2 rounded-full border border-asu-maroon flex items-center justify-center hover:bg-asu-maroon/10 text-asu-maroon transition-colors"
-          aria-label="Scroll right"
-          @click="scrollCampus('right')"
+          class="w-10 h-10 absolute top-1/2 -translate-y-1/2 rounded-full bg-white text-neutral-900 shadow-lg flex items-center justify-center hover:bg-neutral-100 transition-all z-20 carousel-btn-right"
+          :class="
+            activeIndex === campuses.length - 1
+              ? 'opacity-30 cursor-not-allowed pointer-events-none'
+              : 'opacity-100'
+          "
+          aria-label="Next slide"
+          @click="nextSlide"
         >
           <font-awesome-icon icon="chevron-right" />
         </button>
@@ -1108,206 +703,16 @@
       </div>
     </section>
 
-    <footer>
-      <!-- Top Black Section -->
-      <div class="bg-[#181818]">
-        <div
-          class="max-w-[1200px] mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between"
-        >
-          <!-- Logo -->
-          <img src="/images/ASU-EndorsedLogo.png" alt="ASU Logo" class="h-20 object-contain" />
-
-          <!-- Social -->
-          <div class="flex items-center gap-8 text-white text-2xl mt-6 md:mt-0">
-            <font-awesome-icon class="cursor-pointer" :icon="['fab', 'facebook-f']" />
-            <font-awesome-icon class="cursor-pointer" :icon="['fab', 'instagram']" />
-            <font-awesome-icon class="cursor-pointer" :icon="['fab', 'youtube']" />
-            <font-awesome-icon class="cursor-pointer" :icon="['fab', 'linkedin-in']" />
-          </div>
-        </div>
-      </div>
-
-      <!-- Gold Section -->
-      <div class="bg-[#FFC627]">
-        <div
-          class="max-w-[1200px] mx-auto px-6 py-6 flex flex-col lg:flex-row items-center justify-between gap-6"
-        >
-          <!-- Links -->
-          <div
-            class="flex flex-wrap justify-center lg:justify-start gap-8 font-semibold text-black"
-          >
-            <a class="text-asu-black hover:underline" href="#">Maps and Locations</a>
-            <a class="text-asu-black hover:underline" href="#">Jobs</a>
-            <a class="text-asu-black hover:underline" href="#">Directory</a>
-            <a class="text-asu-black hover:underline" href="#">Contact ASU</a>
-            <a class="text-asu-black hover:underline" href="#">My ASU</a>
-          </div>
-
-          <!-- Ranking -->
-          <div class="flex items-center gap-4">
-            <img class="md:max-w-[320px]" src="/images/footer-rank.webp" />
-          </div>
-        </div>
-      </div>
-
-      <!-- Gray Bottom -->
-      <div class="bg-[#E5E5E5]">
-        <div
-          class="max-w-[1200px] mx-auto px-6 py-5 flex flex-col lg:flex-row items-center justify-between gap-4"
-        >
-          <div class="flex flex-wrap gap-8 text-[15px] text-black">
-            <a href="#" class="text-asu-black cursor-pointer hover:underline-black"
-              >Copyright and Trademark</a
-            >
-            <a href="#" class="text-asu-black cursor-pointer hover:underline-black"
-              >Accessibility</a
-            >
-            <a href="#" class="text-asu-black cursor-pointer hover:underline-black">Privacy</a>
-            <a href="#" class="text-asu-black cursor-pointer hover:underline-black">Terms of Use</a>
-            <a href="#" class="text-asu-black cursor-pointer hover:underline-black">Emergency</a>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Mobile SideNav (Dynamic Open/Close Menu) -->
-    <div
-      v-if="mobileMenuOpen"
-      class="fixed inset-0 z-[100] bg-black/60 transition-opacity duration-300"
-      @click.self="mobileMenuOpen = false"
-    >
-      <div
-        class="absolute right-0 top-0 h-full bg-white flex flex-col shadow-xl w-full sm:w-[400px] animate-slide-in"
-      >
-        <div class="p-6 flex flex-col h-full overflow-y-auto">
-          <!-- Logo & Close Panel Button -->
-          <div class="flex justify-between items-start mb-6">
-            <div class="flex flex-col gap-2">
-              <img
-                alt="ASU Logo"
-                class="h-8 w-fit"
-                src="https://lh3.googleusercontent.com/aida/AP1WRLswrq0Ei9lbvgnk41CY5LYYHqCdG8g4-GE2Q-QD0wJc9XYevqyxUoErqAYTHYrxypPIfMu9DYlh59NxesA_wxDCyF4VzI7bFhodVUJPVUyS1VhAlDS83hqIBgftrsUWlokZ13Hq4igbBKYucisvZxvA0IIcbA8etMfQuii9tcNbmJxUHhz1MxEl1ad-duT36Aqh4R1eKiT4bq8FlYUxcYr6hagViwaJoAbWzeq-idygi5DVKBqCaJB4v1B3"
-              />
-              <span class="font-bold text-on-surface">Arizona State University</span>
-            </div>
-            <button
-              id="close-menu"
-              class="border border-on-surface p-2 flex items-center justify-center hover:bg-neutral-100"
-              aria-label="Close menu"
-              @click="mobileMenuOpen = false"
-            >
-              <font-awesome-icon icon="xmark" class="text-on-surface text-xl" />
-            </button>
-          </div>
-          <!-- Menu Search -->
-          <div class="relative mb-6">
-            <font-awesome-icon
-              icon="search"
-              class="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant"
-            />
-            <input
-              class="w-full pl-10 pr-4 py-2 border border-outline-variant focus:ring-asu-maroon focus:border-asu-maroon text-body-md"
-              placeholder="Search asu.edu"
-              type="text"
-            />
-          </div>
-          <!-- Navigation list -->
-          <nav class="flex-1 flex flex-col border-t border-outline-variant">
-            <a
-              class="py-4 border-b border-outline-variant text-on-surface font-body-md hover:text-asu-maroon"
-              href="#"
-              >Home</a
-            >
-            <a
-              class="py-4 border-b border-outline-variant text-on-surface font-body-md hover:text-asu-maroon"
-              href="https://news.asu.edu/"
-              >News and Events</a
-            >
-            <a
-              class="py-4 border-b border-outline-variant text-on-surface font-body-md hover:text-asu-maroon"
-              href="https://www.asu.edu/academics"
-              >Academics</a
-            >
-            <a
-              class="py-4 border-b border-outline-variant text-on-surface font-body-md hover:text-asu-maroon"
-              href="https://admission.asu.edu/"
-              >Admission</a
-            >
-            <a
-              class="py-4 border-b border-outline-variant text-on-surface font-body-md hover:text-asu-maroon"
-              href="https://research.asu.edu/"
-              >Research</a
-            >
-            <div class="relative">
-              <a
-                class="py-4 block text-on-surface font-body-md hover:text-asu-maroon"
-                href="https://thesundevils.com/"
-                >Athletics</a
-              >
-              <div class="absolute bottom-0 left-0 w-full h-1 bg-asu-gold"></div>
-            </div>
-            <a
-              class="py-4 border-t border-b border-outline-variant text-on-surface font-body-md hover:text-asu-maroon"
-              href="https://alumni.asu.edu/"
-              >Alumni</a
-            >
-            <a
-              class="py-4 border-b border-outline-variant text-on-surface font-body-md hover:text-asu-maroon"
-              href="https://giving.asu.edu/"
-              >Giving</a
-            >
-            <a
-              class="py-4 border-b border-outline-variant text-on-surface font-body-md hover:text-asu-maroon"
-              href="https://president.asu.edu/"
-              >President</a
-            >
-            <a
-              class="py-4 border-b border-outline-variant text-on-surface font-body-md hover:text-asu-maroon"
-              href="https://www.asu.edu/about"
-              >About ASU</a
-            >
-          </nav>
-          <!-- Footer Shortcuts inside Drawer -->
-          <div class="grid grid-cols-2 border-t border-outline-variant mt-auto pt-4">
-            <a
-              class="p-3 border-r border-b border-outline-variant bg-surface-container-low text-center text-xs font-bold hover:text-asu-maroon"
-              href="https://www.asu.edu/"
-              >ASU Home</a
-            >
-            <a
-              class="p-3 border-b border-outline-variant bg-surface-container-low text-center text-xs font-bold hover:text-asu-maroon"
-              href="https://my.asu.edu/"
-              >My ASU</a
-            >
-            <a
-              class="p-3 border-r border-outline-variant bg-surface-container-low text-center text-xs font-bold hover:text-asu-maroon"
-              href="https://www.asu.edu/colleges"
-              >Colleges &amp; Schools</a
-            >
-            <a
-              class="p-3 bg-surface-container-low text-center text-xs font-bold hover:text-asu-maroon"
-              href="https://my.asu.edu/"
-              >Sign In</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+    <AppFooter />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onUnmounted } from "vue";
-const isScrolled = ref(false);
-const handleScroll = () => {
-  isScrolled.value = window.scrollY > 41;
-};
-onMounted(() => {
-  window.addEventListener("scroll", handleScroll);
-});
-onUnmounted(() => {
-  window.removeEventListener("scroll", handleScroll);
-});
+import AppHeader from "~/components/layout/AppHeader.vue";
+import AppFooter from "~/components/layout/AppFooter.vue";
+import StoryCard from "~/components/sections/StoryCard.vue";
+import VisualBlockCard from "~/components/sections/VisualBlockCard.vue";
+
 // Disable default RDS Layout to keep pixel-perfect custom styling from Stitch
 definePageMeta({
   layout: false,
@@ -1432,9 +837,6 @@ useHead({
   ],
 });
 
-// Navigation drawer state
-const mobileMenuOpen = ref(false);
-
 // Hero video state
 const isVideoPlaying = ref(true);
 const heroVideo = ref<HTMLVideoElement | null>(null);
@@ -1534,7 +936,7 @@ const stopRankAutoPlay = () => {
 };
 
 // Campus Locations Carousel
-const campusCarousel = ref<HTMLElement | null>(null);
+const activeIndex = ref(0);
 const campuses = [
   {
     name: "Polytechnic campus",
@@ -1547,36 +949,68 @@ const campuses = [
     link: "https://tours.asu.edu/tempe",
   },
   {
+    name: "West Valley campus",
+    img: "https://lh3.googleusercontent.com/aida/AP1WRLtAY_kOx0PZtq-NmRW2gNJA2g74YzAU9ba17FJD-radNooLKFXOrEplMYKa2a56KLsa-m5HyHOmxf196sshLWwWwmWfwdTSlje9QYilo9dTwgrS1W37X_Z8lqxeKogTjp5QMgbewPmpw3t7aSeK9swOAyNH8AF6zxm85cSwXpQTSTBUDzx6MrJbC7EX_O5BNl0WtKo6fEWaDcNyh0XPtE5aVglT_5S4EMHnK8RcfMclGmPaWim-8_AReMx1",
+    link: "https://tours.asu.edu/west",
+  },
+  {
     name: "Downtown Phoenix campus",
     img: "https://lh3.googleusercontent.com/aida/AP1WRLvC_JlU4n9To3YsAxZZhAdCJffzUZJYccql59zsryHZIxsEYRVbk5ndcVmMQVPZ4fyLfGMeZKuuWDxsqei_ryjX3-XgxsiQ8l54IxSr3lIo125ZM_B0EYI79wrQlutcoIyyJL1KckxZBYOz6gzJOkYcLiL_Aaw05s-BH4M4Ci1whFNStHMcH29Di0PwnktGwrD-5vumKnHTYw0333ox-801wtHL6-7EG36eADQwWVkB94d4cilkjP4BUBiO",
     link: "https://tours.asu.edu/downtown",
   },
-  {
-    name: "West campus",
-    img: "https://lh3.googleusercontent.com/aida/AP1WRLtAY_kOx0PZtq-NmRW2gNJA2g74YzAU9ba17FJD-radNooLKFXOrEplMYKa2a56KLsa-m5HyHOmxf196sshLWwWwmWfwdTSlje9QYilo9dTwgrS1W37X_Z8lqxeKogTjp5QMgbewPmpw3t7aSeK9swOAyNH8AF6zxm85cSwXpQTSTBUDzx6MrJbC7EX_O5BNl0WtKo6fEWaDcNyh0XPtE5aVglT_5S4EMHnK8RcfMclGmPaWim-8_AReMx1",
-    link: "https://tours.asu.edu/west",
-  },
 ];
 
-const scrollCampus = (direction: "left" | "right") => {
-  if (campusCarousel.value) {
-    const scrollAmount = 400;
-    if (direction === "left") {
-      campusCarousel.value.scrollLeft -= scrollAmount;
+const nextSlide = () => {
+  if (activeIndex.value < campuses.length - 1) {
+    activeIndex.value++;
+  }
+};
+
+const prevSlide = () => {
+  if (activeIndex.value > 0) {
+    activeIndex.value--;
+  }
+};
+
+const trackStyle = computed(() => {
+  return {
+    transform: `translate3d(calc(50vw - (var(--slide-width) / 2) - (${activeIndex.value} * (var(--slide-width) + var(--gap-width)))), 0, 0)`,
+  };
+});
+
+// Touch gestures
+let touchStartX = 0;
+let touchEndX = 0;
+
+const handleTouchStart = (e: TouchEvent) => {
+  const touch = e.changedTouches[0];
+  if (touch) {
+    touchStartX = touch.clientX;
+  }
+};
+
+const handleTouchEnd = (e: TouchEvent) => {
+  const touch = e.changedTouches[0];
+  if (touch) {
+    touchEndX = touch.clientX;
+    handleSwipe();
+  }
+};
+
+const handleSwipe = () => {
+  const swipeThreshold = 50;
+  const diff = touchStartX - touchEndX;
+  if (Math.abs(diff) > swipeThreshold) {
+    if (diff > 0) {
+      nextSlide();
     } else {
-      campusCarousel.value.scrollLeft += scrollAmount;
+      prevSlide();
     }
   }
 };
 
 onMounted(() => {
   startRankAutoPlay();
-
-  // Retrieve query parameters to support ?menu=open on load
-  const urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.get("menu") === "open") {
-    mobileMenuOpen.value = true;
-  }
 });
 
 onUnmounted(() => {
@@ -1652,9 +1086,51 @@ onUnmounted(() => {
   }
 }
 
-.transform-slider-desktop {
-  transition: transform cubic-bezier(0.165, 0.84, 0.44, 1);
-  transform: translate3d(360px, 0px, 0px);
+.carousel-container {
+  --slide-width: 85vw;
+  --gap-width: 16px;
+}
+
+@media (min-width: 768px) {
+  .carousel-container {
+    --slide-width: 70vw;
+    --gap-width: 24px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .carousel-container {
+    --slide-width: 1000px;
+    --gap-width: 24px;
+  }
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.carousel-slide {
+  width: var(--slide-width);
+  margin-right: var(--gap-width);
+  flex-shrink: 0;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.carousel-btn-left {
+  left: 10px;
+}
+.carousel-btn-right {
+  right: 10px;
+}
+@media (min-width: 640px) {
+  .carousel-btn-left {
+    left: calc(50vw - (var(--slide-width) / 2) - 20px);
+  }
+  .carousel-btn-right {
+    right: calc(50vw - (var(--slide-width) / 2) - 20px);
+  }
 }
 
 .animate-slide-in {
