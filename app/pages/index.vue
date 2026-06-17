@@ -2,88 +2,141 @@
   <div
     class="responsive-view bg-surface font-body-md text-on-surface antialiased overflow-x-hidden min-h-screen"
   >
-    <!-- Utility Top Bar (Desktop Only) -->
-    <nav class="bg-surface-container-low hidden lg:block border-b border-outline-variant">
-      <div
-        class="max-w-container-max mx-auto px-gutter h-10 flex justify-end items-center gap-6 font-label-lg text-label-lg text-on-surface-variant"
-      >
-        <a class="hover:text-asu-maroon transition-colors" href="https://www.asu.edu/">ASU Home</a>
-        <a class="hover:text-asu-maroon transition-colors" href="https://my.asu.edu/">My ASU</a>
-        <a class="hover:text-asu-maroon transition-colors" href="https://www.asu.edu/colleges"
-          >Colleges &amp; Schools</a
+    <div class="">
+      <!-- Utility Top Bar (Desktop Only) -->
+      <nav class="bg-surface-container-low hidden lg:block border-b border-outline-variant">
+        <div
+          class="max-w-container-max mx-auto px-gutter h-10 flex justify-end items-center gap-6 font-label-lg text-label-lg text-on-surface-variant"
         >
-        <a class="hover:text-asu-maroon transition-colors" href="https://my.asu.edu/">Sign In</a>
-        <div class="flex items-center gap-1 cursor-pointer hover:text-asu-maroon">
-          <span>Search</span>
-          <font-awesome-icon icon="search" class="text-[14px]" />
-        </div>
-      </div>
-    </nav>
-
-    <!-- Main Header -->
-    <header class="bg-white sticky top-0 z-50 shadow-sm">
-      <div class="max-w-container-max mx-auto px-gutter h-20 flex justify-between items-center">
-        <!-- Logo and Desktop Navigation Links -->
-        <div class="flex items-center gap-8">
-          <NuxtLink to="/" class="flex-shrink-0">
-            <img
-              alt="ASU Logo"
-              class="h-10 md:h-12 w-auto"
-              src="https://lh3.googleusercontent.com/aida/AP1WRLswrq0Ei9lbvgnk41CY5LYYHqCdG8g4-GE2Q-QD0wJc9XYevqyxUoErqAYTHYrxypPIfMu9DYlh59NxesA_wxDCyF4VzI7bFhodVUJPVUyS1VhAlDS83hqIBgftrsUWlokZ13Hq4igbBKYucisvZxvA0IIcbA8etMfQuii9tcNbmJxUHhz1MxEl1ad-duT36Aqh4R1eKiT4bq8FlYUxcYr6hagViwaJoAbWzeq-idygi5DVKBqCaJB4v1B3"
-            />
-          </NuxtLink>
-          <nav
-            class="hidden xl:flex items-center gap-6 font-headline-sm text-[16px] text-asu-maroon font-bold"
-          >
-            <a class="hover:border-b-2 border-asu-maroon pb-1" href="https://news.asu.edu/"
-              >News and Events</a
-            >
-            <a class="hover:border-b-2 border-asu-maroon pb-1" href="https://www.asu.edu/academics"
-              >Academics</a
-            >
-            <a class="hover:border-b-2 border-asu-maroon pb-1" href="https://research.asu.edu/"
-              >Research</a
-            >
-            <a class="hover:border-b-2 border-asu-maroon pb-1" href="https://admission.asu.edu/"
-              >Admission</a
-            >
-            <a class="hover:border-b-2 border-asu-maroon pb-1" href="https://thesundevils.com/"
-              >Athletics</a
-            >
-            <a class="hover:border-b-2 border-asu-maroon pb-1" href="https://alumni.asu.edu/"
-              >Alumni</a
-            >
-            <a class="hover:border-b-2 border-asu-maroon pb-1" href="https://giving.asu.edu/"
-              >Giving</a
-            >
-          </nav>
-        </div>
-
-        <!-- CTA Buttons / Mobile Hamburger Trigger -->
-        <div class="flex items-center gap-4">
           <a
-            href="https://admission.asu.edu/apply"
-            target="_blank"
-            class="bg-asu-maroon text-white font-label-lg px-5 md:px-6 py-2 transition-transform active:scale-95 hover:bg-opacity-90 text-sm md:text-base"
-            >Apply</a
+            class="hover:text-asu-maroon transition-colors text-gray-600 text-sm"
+            href="https://www.asu.edu/"
+            >ASU Home</a
           >
           <a
-            href="https://visit.asu.edu/"
-            target="_blank"
-            class="hidden sm:inline-block border-2 border-asu-maroon text-asu-maroon font-label-lg px-6 py-2 transition-transform active:scale-95 hover:bg-asu-maroon hover:text-white"
-            >Visit</a
+            class="hover:text-asu-maroon transition-colors text-gray-600 text-sm"
+            href="https://my.asu.edu/"
+            >My ASU</a
           >
-
-          <button
-            class="xl:hidden text-asu-maroon text-2xl p-1"
-            aria-label="Open Mobile Menu"
-            @click="mobileMenuOpen = true"
+          <a
+            class="hover:text-asu-maroon transition-colors text-gray-600 text-sm"
+            href="https://www.asu.edu/colleges"
+            >Colleges and Schools</a
           >
-            <font-awesome-icon icon="bars" />
-          </button>
+          <a
+            class="hover:text-asu-maroon transition-colors text-gray-600 text-sm"
+            href="https://my.asu.edu/"
+            >Sign In</a
+          >
+          <div
+            class="flex items-center gap-1 cursor-pointer hover:text-asu-maroon text-gray-600 text-sm"
+          >
+            <span>Search</span>
+            <font-awesome-icon icon="search" class="text-[13px]" />
+          </div>
         </div>
-      </div>
-    </header>
+      </nav>
+
+      <!-- Main Header -->
+      <header
+        :class="isScrolled ? 'fixed top-0 ' : 'sticky top-0'"
+        class="bg-white shadow-sm w-full z-50"
+      >
+        <div
+          :class="isScrolled ? 'h-[93px]' : 'h-[113px]'"
+          class="max-w-container-max mx-auto px-gutter h-[113px] flex justify-between items-center"
+        >
+          <!-- Logo and Desktop Navigation Links -->
+          <div class="flex h-full gap-6">
+            <!-- ASU Logo: fork icon + wordmark text -->
+            <NuxtLink to="/" class="flex-shrink-0 flex items-center gap-3">
+              <img
+                alt="ASU Logo"
+                class="transition-scrolled"
+                :class="!isScrolled ? 'h-[72px] w-[93px]' : 'h-[60px] w-[83px]'"
+                src="/images/arizona-state-university-logo-vertical.webp"
+              />
+            </NuxtLink>
+            <div class="flex flex-col justify-between pt-3">
+              <span
+                :class="isScrolled ? 'text-[2rem]' : 'text-[2.5rem]'"
+                class="transition-scrolled hidden sm:block text-[2.5rem] font-bold text-gray-900 leading-tight"
+                >Arizona State University</span
+              >
+              <!-- Desktop Navigation -->
+              <nav class="hidden xl:flex items-center font-medium text-[15px] text-gray-900 h-12">
+                <!-- Home Icon with gold underline -->
+                <NuxtLink
+                  to="/"
+                  class="flex items-center justify-center h-full px-3 border-b-8 border-yellow-400 text-gray-900 transition-colors"
+                  aria-label="Home"
+                >
+                  <font-awesome-icon icon="home" class="text-[18px]" />
+                </NuxtLink>
+
+                <a
+                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
+                  href="https://news.asu.edu/"
+                  >News and Events</a
+                >
+                <a
+                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
+                  href="https://www.asu.edu/academics"
+                  >Academics</a
+                >
+                <a
+                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
+                  href="https://admission.asu.edu/"
+                  >Admission</a
+                >
+                <a
+                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
+                  href="https://research.asu.edu/"
+                  >Research</a
+                >
+                <a
+                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
+                  href="https://thesundevils.com/"
+                  >Athletics</a
+                >
+                <a
+                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
+                  href="https://alumni.asu.edu/"
+                  >Alumni</a
+                >
+                <a
+                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
+                  href="https://giving.asu.edu/"
+                  >Giving</a
+                >
+                <a
+                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
+                  href="https://www.asu.edu/president"
+                  >President</a
+                >
+                <a
+                  class="flex items-center h-full px-3 text-gray-900 decoration-none border-b-8 hover:border-yellow-400 border-transparent hover:border-asu-maroon transition-colors"
+                  href="https://www.asu.edu/about"
+                  >About ASU</a
+                >
+              </nav>
+            </div>
+          </div>
+
+          <!-- Mobile Hamburger Trigger -->
+          <div class="flex xl:hidden items-center gap-4">
+            <button
+              class="text-asu-maroon text-2xl p-1"
+              aria-label="Open Mobile Menu"
+              @click="mobileMenuOpen = true"
+            >
+              <font-awesome-icon icon="bars" />
+            </button>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div v-if="isScrolled" class="h-[93px]" />
 
     <!-- Unified Hero Section (Responsive Video/Image Hero) -->
     <section
@@ -1245,7 +1298,16 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from "vue";
-
+const isScrolled = ref(false);
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 41;
+};
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
+onUnmounted(() => {
+  window.removeEventListener("scroll", handleScroll);
+});
 // Disable default RDS Layout to keep pixel-perfect custom styling from Stitch
 definePageMeta({
   layout: false,
@@ -1541,6 +1603,9 @@ onUnmounted(() => {
   100% {
     background-position: 200% 0;
   }
+}
+.transition-scrolled {
+  transition: 0.5s cubic-bezier(0.19, 1, 0.19, 1);
 }
 
 .boxed-highlight {
