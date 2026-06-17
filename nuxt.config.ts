@@ -9,6 +9,12 @@ export default defineNuxtConfig({
       "@fortawesome/fontawesome-svg-core",
       "@fortawesome/free-solid-svg-icons",
       "@fortawesome/free-brands-svg-icons",
+      "@rds-vue-ui/card-image-article",
+      "@rds-vue-ui/card-image-tile",
+      "@rds-vue-ui/footer-partner",
+      "@rds-vue-ui/footer-standard",
+      "@rds-vue-ui/header-standard",
+      "@rds-vue-ui/rds-theme-base",
     ],
   },
 });
