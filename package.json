@@ -29,6 +29,7 @@
     "@rds-vue-ui/rds-theme-base": "^0.7.2",
     "@vueuse/core": "^14.3.0",
     "nuxt": "^4.4.8",
+    "swiper": "^12.2.0",
     "vue": "^3.5.35",
     "vue-router": "^5.1.0"
   },
